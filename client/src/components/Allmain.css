@@ -1,0 +1,41 @@
+.card-text {
+
+    text-align: center;
+    color: white;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.link {
+    color: white;
+
+}
+
+.col-sm-3 {
+    width: 330px;
+    height: 330px;
+}
+
+.ab {
+    align-items: center;
+}
+
+.link:hover {
+    color: #3399ff;
+}
+
+.container {
+    background-color: #262626;
+}
+
+.display-2 {
+    color: white;
+}
+
+.hr {
+    color: white;
+}
+
+/* #ff0000 */
