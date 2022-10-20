@@ -17,9 +17,10 @@ const cors = require("cors");
 //import order routes
 const orderRoutes = require('./routes/order');
 
-
-
-
+//import material routes
+const materialroutes = require("./routes/materials");
+const lmomatroutes = require("./routes/lmomats");
+const matreportroutes = require("./routes/matreports");
 
 //middleware --> Backend routes facilates
 
@@ -29,6 +30,11 @@ app.use(cors());
 
 //route order middleware
 app.use(orderRoutes);
+
+//route material midleware
+app.use(materialroutes);
+app.use(lmomatroutes);
+app.use(matreportroutes);
 
 
 //server static assests if in production - for Heroku
