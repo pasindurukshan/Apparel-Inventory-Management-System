@@ -56,9 +56,6 @@ import adminaccount from "./components/adminaccount";
 import admintransport from "./components/admintransport";
 import adminready from "./components/adminready";
 
-
-
-
 import CreatePacking from "./components/CreatePacking";
 import EditPacking from "./components/EditPacking";
 import packingHome from "./components/packingHome";
@@ -80,6 +77,7 @@ import EditLSmaterial from "./components/EditLSmaterial";
 import HomeLSmaterial from "./components/HomeLSmaterial";
 import DetailsLSmaterial from "./components/DetailsLSmaterial";
 
+//Material 
 import MaterialCreate from "./components/MaterialCreate";
 import MaterialEdit from "./components/MaterialEdit";
 import LmoMatCreate from "./components/LmoMatCreate";
@@ -97,7 +95,6 @@ import ReportDetails from "./components/ReportDetails";
 import MatInsTwo from "./components/MatInsTwo";
 import MatDis from "./components/MatDis";
 import MatInsThree from "./components/MatInsThree"
-
 
 import orderCreate from "./components/orderCreate";
 import orderEdit from "./components/orderEdit";
