@@ -5,7 +5,6 @@ const Factory = require("../models/factory");
 //invoke function in express -- express.Router
 const router = express.Router();
 
-
 //Create & save Factory
 router.post("/factory/create", (req, res) => {
   let newFactory = new Factory(req.body);
@@ -38,7 +37,7 @@ router.get("/factory", (req, res) => {
   });
 });
 
-//get a specific post
+//get(retrieve) a specific post
 router.get("/factory/:id", (req, res) => {
   let factoryId = req.params.id;
 
