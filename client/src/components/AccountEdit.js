@@ -36,8 +36,6 @@ export default class AccountEdit extends Component {
 
     }
 
-
-      
         //Form Validation part
  
         validate= ()=>{
