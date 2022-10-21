@@ -17,7 +17,7 @@ router.post("/factory/create", (req, res) => {
     }
 
     return res.status(200).json({
-      success: "Raw Materials Send successfully",
+      success: "Raw Materials send successfully.",
     });
   });
 });
