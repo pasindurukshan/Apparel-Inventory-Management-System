@@ -81,7 +81,7 @@ router.delete("/factory/delete/:id", (req, res) => {
       });
 
     return res.json({
-      message: "Delete Factory Succesfull",
+      message: "Delete Factory Succesfulll",
       deleteFactory,
     });
   });
