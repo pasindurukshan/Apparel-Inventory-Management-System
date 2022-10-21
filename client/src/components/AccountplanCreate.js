@@ -25,7 +25,6 @@ export default class AccountplanCreate extends Component {
             })
 
         }
-
         onSubmit = (e) =>{
             e.preventDefault();
 
@@ -57,8 +56,6 @@ export default class AccountplanCreate extends Component {
             else if(time ==""){
              swal.fire('WARNING','Add Time !','warning')
             }
-           
-
             console.log(data)
 
             axios.post("http://localhost:8000/accountplan/save",data).then((res)=>{
@@ -70,15 +67,11 @@ export default class AccountplanCreate extends Component {
                   this.setState(
                     
                     {
-
                         plan:"",
                         section:"",
                         deci:"",
                         requr:"",
                         time:""
-                       
-
-
                     }
                     
                     )
@@ -92,7 +85,6 @@ export default class AccountplanCreate extends Component {
             e.preventDefault();
     
             const {  plan, section, deci, requr, time} = this.state;
-    
             const data = {
                 plan:plan,
                 section:section,
@@ -101,9 +93,6 @@ export default class AccountplanCreate extends Component {
                 time:time,
                
             }
-    
-            console.log(data)
-    
             this.setState(
                 {
                     plan:"increase sales",
@@ -114,11 +103,6 @@ export default class AccountplanCreate extends Component {
                 }
             )
         }
-
-
-
-
-
     render() {
         return (
             <div className="container">
@@ -166,8 +150,6 @@ export default class AccountplanCreate extends Component {
                            Create Account Future Plan  -
                           </a>
                         </li>
-
-                       
                       </ul>
                     </div>
                   </div>
@@ -187,7 +169,6 @@ export default class AccountplanCreate extends Component {
                         value={this.state.plan}
                         onChange={this.handleInputChange}/>
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Section</label>
                         <input type = "text"
@@ -197,7 +178,6 @@ export default class AccountplanCreate extends Component {
                         value={this.state.section}
                         onChange={this.handleInputChange}/>
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Description</label>
                         <textarea  
@@ -207,7 +187,6 @@ export default class AccountplanCreate extends Component {
                         value={this.state.deci}
                         onChange={this.handleInputChange}/>
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}> Requirment </label>
                         <input type = "text"
@@ -217,7 +196,6 @@ export default class AccountplanCreate extends Component {
                         value={this.state.requr}
                         onChange={this.handleInputChange}/>
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Time Period</label>
                         <input type = "text"
@@ -227,37 +205,15 @@ export default class AccountplanCreate extends Component {
                         value={this.state.time}
                         onChange={this.handleInputChange}/>
                     </div>
-
-                   
-
                     <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Save
                     </button>
                     <button type="submit" className="btn btn-dark" style={{ marginTop: '15px', marginBottom:'20px', marginLeft:"900px", width:"140px", backgroundColor:"#2E4661", borderRadius:"10px", padding:"10px 0px 10px 0px"}} onClick={this.btnDemo}>Demo</button>
 
-
                 </form>
-                
             </div>
             </div>
-
-
-            
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
         )
     }
