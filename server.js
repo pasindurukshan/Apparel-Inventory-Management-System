@@ -1,0 +1,120 @@
+//ServerJS --> Backend and MongoDB connection make
+
+//Import expres package & mongoose package by require
+const express = require("express");
+const mongoose = require("mongoose");
+
+//coming to server json format, so convert to js format
+const bodyparser = require("body-parser");
+
+//To run server create constant variable app
+//Invoke express
+const app = express();
+
+//To reject browser security while two domain working
+const cors = require("cors");
+
+//import transport routes
+const driverroutes = require("./routes/drivers");
+const vehicleroutes = require("./routes/vehicles");
+
+//import packing routes
+const packingRoutes = require("./routes/packings");
+
+//accounts import rotes
+const accountroutes = require("./routes/accounts");
+const accountplanroutes = require("./routes/accountplans");
+
+//import production routes
+const inventoryRoutes = require("./routes/inventory");
+const factoryRoutes = require("./routes/factory");
+//const orderRoutes = require("./routes/orders");
+
+//import Shipment routes
+const shipmentroutes = require("./routes/shipments");
+const lessmaterialRoutes = require("./routes/lmocard");
+
+//import material routes
+const materialroutes = require("./routes/materials");
+const lmomatroutes = require("./routes/lmomats");
+const matreportroutes = require("./routes/matreports");
+
+
+//import order routes
+const orderRoutes = require('./routes/order');
+
+
+//import qualitycheck routes
+const postRoutes = require('./routes/postsqc');
+
+
+
+//middleware --> Backend routes facilates
+
+//middleware 
+app.use(bodyparser.json());
+app.use(cors());
+
+//transport  routes midleware
+app.use(driverroutes);
+app.use(vehicleroutes);
+
+//accounts routes midleware
+app.use(accountroutes);
+app.use(accountplanroutes);
+
+//production routes midleware
+app.use(inventoryRoutes);
+app.use(factoryRoutes);
+app.use(orderRoutes);
+
+//route middleware
+app.use(packingRoutes);
+
+//routes shipment middleware
+app.use(shipmentroutes);
+app.use(lessmaterialRoutes);
+
+//route material midleware
+app.use(materialroutes);
+app.use(lmomatroutes);
+app.use(matreportroutes);
+
+//route order middleware
+app.use(orderRoutes);
+
+
+//route qualitycheck midleware
+app.use(postRoutes);
+
+
+//server static assests if in production - for Heroku
+if (process.env.NODE_ENV == 'production') { 
+  //Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => { 
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
+
+const PORT = process.env.PORT || 8000;
+const DB_URL =
+  "mongodb+srv://spm:spm123@cluster0.6jhrihp.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose
+  .connect(DB_URL)
+  .then(() => {
+    console.log("Mongodb Successfully Connected");
+  })
+  .catch((err) => {
+    console.log("mongodb connection Failed");
+  });
+
+//port Listen
+app.listen(PORT, () => {
+  console.log(`Server is Running on port No ${PORT}`);
+});
+
+module.exports = mongoose;
