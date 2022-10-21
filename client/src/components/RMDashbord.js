@@ -126,66 +126,63 @@ class RMDashboard extends Component {
             &nbsp; &nbsp; &nbsp;
             <div class="row">
               <div class="col-sm-4">
-                <div class="card-transparent">
+                <div class="card">
                   <img
                     src="%PUBLIC_URL%../../packing.jpg"
-                    width="400"
-                    height="400"
+                    width="300"
+                    height="300"
                     class="card-img-top"
                     alt="..."
                   />
                   <div class="shadow bg- rounded">
                     <div class="card-body" style={{ textAlign: "center" }}>
-                      <div class="shadow bg- rounded">
-                        <h5 class="card-title">Packing Details</h5>
-
-                        <a href="/packingHome" className="bn3">
-                          Go Packing Form
-                        </a>
-                      </div>
+                      <h5 class="card-title">Packing Details</h5>
+                      <br />
+                      <a href="/packingHome" className="btn btn-primary">
+                        Go Packing Form
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-sm-4">
-                <div class="card-transparent">
+                <div class="card">
                   <img
                     src="%PUBLIC_URL%../../transportmen.jpg"
-                    width="400"
-                    height="400"
+                    width="300"
+                    height="300"
                     class="card-img-top"
                     alt="..."
                   />
                   <div class="shadow bg- rounded">
                     <div class="card-body" style={{ textAlign: "center" }}>
-                      <div class="shadow bg- rounded">
-                        <h5 class="card-title">Transport Details</h5>
-                        <a href="/packingtrasport" className="bn3">
-                           Transport Schedule
-                        </a>
-                      </div>
+                      <h5 class="card-title">Transport Details</h5>
+                      <br />
+                      <a href="/packingtrasport" className="btn btn-primary">
+                        Transport Schedule
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-sm-4">
-                <div class="card-transparent">
+                <div class="card">
                   <img
                     src="%PUBLIC_URL%../../reportphmenn.jpg"
                     width="300"
-                    height="400"
+                    height="300"
                     class="card-img-top"
                     alt="..."
                   />
                   <div class="shadow bg- rounded">
                     <div class="card-body" style={{ textAlign: "center" }}>
-                      <div class="shadow bg- rounded">
-                        <h5 class="card-title">Reporting</h5>
 
-                        <a href="/RMReport" className="bn3">
-                          Go Reporting
-                        </a>
-                      </div>
+                      <h5 class="card-title">Reporting</h5>
+                      <br />
+                      <a href="/RMReport" className="btn btn-primary">
+                        Go Reporting
+                      </a>
+
                     </div>
                   </div>
                 </div>
