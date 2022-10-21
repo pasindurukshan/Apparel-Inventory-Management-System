@@ -54,11 +54,11 @@ export default class ShipmentCreate extends Component {
     }
 
     if (!this.state.supllierName) {
-      supplierNameError = "* supllierName is Required!";
+      supplierNameError = "* supllierName is Required!!!";
     }
 
     if (!this.state.materialID) {
-      materialIDError = "* materialID is Required!";
+      materialIDError = "* materialID is Required!!!";
     }
 
     if (!this.state.materialName) {
