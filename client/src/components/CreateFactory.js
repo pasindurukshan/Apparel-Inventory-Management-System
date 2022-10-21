@@ -49,7 +49,7 @@ export default class CreateFactory extends Component {
 
     //statements check values and patterns
     if (!this.state.facname) {
-      facnameError = "*Factory Name is Required!";
+      facnameError = "*Factory Name is Required!!";
     }
 
     if (!this.state.factelephone) {
