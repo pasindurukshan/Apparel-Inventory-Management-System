@@ -3,6 +3,7 @@ import "./RMdashbord.css"
 import "./btn3.css";
 
 class RMDashboard extends Component {
+
   render() {
     return (
       <div id="wrapper" className="toggled">
@@ -92,6 +93,7 @@ class RMDashboard extends Component {
                 data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev"
               >
+
                 <span
                   class="carousel-control-prev-icon"
                   aria-hidden="true"
