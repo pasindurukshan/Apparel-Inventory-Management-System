@@ -22,7 +22,7 @@ router.post("/factory/create", (req, res) => {
   });
 });
 
-//get factory
+//get a factory
 router.get("/factory", (req, res) => {
   Factory.find().exec((err, factory) => {
     if (err) {
