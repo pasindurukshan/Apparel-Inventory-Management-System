@@ -214,8 +214,6 @@ class DefectCard extends Component {
             </div>
           </div>
         </div>
-
-
         <div class="footer">
 
 
