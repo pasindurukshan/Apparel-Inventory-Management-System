@@ -26,7 +26,6 @@ class QualityDash extends Component {
               </div>
             </nav>
 
-
             <div class="row">
               <div class="col-sm-4">
                 <div class="card">
@@ -72,8 +71,6 @@ class QualityDash extends Component {
             <br />
             <div class="col">
               <h1>ABOUT US</h1>
-
-
               <ul>
 
                 <li><i class="fas fa-phone-square"></i>&nbsp; &nbsp; Contact us</li>
