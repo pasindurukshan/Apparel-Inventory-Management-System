@@ -6,7 +6,6 @@ import swal from 'sweetalert2';
 
 export default class AccountCreate extends Component {
  //constructor define variables
-
         constructor(props){
             super(props);
             this.state={
@@ -38,10 +37,7 @@ export default class AccountCreate extends Component {
             })
 
         }
-
-
         //Form Validation part
- 
         validate= ()=>{
              // let orderIdError="";
                let cusNameError="";
@@ -55,45 +51,30 @@ export default class AccountCreate extends Component {
           if(!this.state.cusName){
             cusNameError="* Customer Name is Required!"
           }
-        
-          
           if(!this.state.cusStatus){
             cusStatusError="* customer status is Required!"
             }
-
-
            if(!this.state.pjournal){
             pjournalError="* purchase journal amount is Required"
            }
            if(this.state.pjournal.toString().match("-")){
             pjournalError="* purchase journal amount should not be negative "
            }
-
-
            if(!this.state.sjournal){
             sjournalError="* sale journal is Required"
             }
             if(this.state.sjournal.toString().match("-")){
               sjournalError="* sale journal amount should not be negative "
              }
-
-
-
-
             if(!this.state.gjournal){
               gjournalError="*general journal  is Required"
              }
              if(this.state.gjournal.toString().match("-")){
               gjournalError="* general journal amount should not be negative "
              }
-
-
-
-
             if(!this.state.other){
               otherError="* other feild is Required"
-             } 
-                         
+             }           
              //check any errors
            if(cusNameError||cusStatusError||pjournalError || sjournalError || gjournalError || otherError){
            this.setState({cusNameError,cusStatusError,pjournalError , sjournalError , gjournalError , otherError});
@@ -105,11 +86,6 @@ export default class AccountCreate extends Component {
    
       }
     
-  
-
-
-
-
         //on submit method
         onSubmit = (e) =>{
 
@@ -118,8 +94,6 @@ export default class AccountCreate extends Component {
             e.preventDefault();
             const isValid = this.validate();
             const {cusName,cusStatus,pjournal,sjournal,gjournal,other} = this.state;
-          
-
             const data = {
                // orderId:orderId,
                 cusName:cusName,
@@ -131,9 +105,7 @@ export default class AccountCreate extends Component {
             }
             if (isValid) {
             console.log(data)
-
             //backend url called
-
             axios.post("http://localhost:8000/account/save",data).then((res)=>{
                 if(res.data.success){
                    // alert("Create Successfully !!!");
@@ -142,17 +114,12 @@ export default class AccountCreate extends Component {
                     //clear field after inserting
                     this.setState(
                     {
-                       
-
-                       // orderId:"",
                         cusName:"",
                         cusStatus:"",
                         pjournal:"",
                         sjournal:"",
                         gjournal:"",
                         other:""
-
-
 
                     }
                     
@@ -182,7 +149,6 @@ export default class AccountCreate extends Component {
     
             this.setState(
                 {
-                   // orderId: "OID021",
                     cusName: "Odel",
                     cusStatus: "special",
                     pjournal: "120000",
@@ -193,11 +159,6 @@ export default class AccountCreate extends Component {
                 }
             )
         }
-
-
-
-
-
     render() {
         return (
             <div className="container">
