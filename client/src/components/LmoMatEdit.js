@@ -41,10 +41,7 @@ export default class LmoMatEdit extends Component {
       let qtyError="";
       let categoryError="";
       let descriptionError="";
-      //statements
-      // if(!this.state.lmoID){
-      //   lmoIDError="*LMO ID is Required!"
-      // }
+
       if(!this.state.matID){
         matIDError="*Material ID is Required!"
       }
@@ -66,8 +63,7 @@ export default class LmoMatEdit extends Component {
       if(!this.state.description){
         descriptionError="*Description is Required"
       }
-  
-
+ 
       if(lmoIDError||matIDError||matNameError||qtyError||categoryError||descriptionError){
        this.setState({lmoIDError,matIDError,matNameError,qtyError,categoryError,descriptionError});
        return false;
@@ -139,8 +135,6 @@ export default class LmoMatEdit extends Component {
         });
     }
 
-
-
     //gather outputs
     render() {
       const id =this.props.match.params.id;
@@ -149,8 +143,6 @@ export default class LmoMatEdit extends Component {
             <div id="wrapper" className="toggled">
             <div id="page-content-wrapper">
             <div className="container-fluid">
-
-
 
               {/* custom navigation        */}
               <nav class="navbar navbar-expand-lg navbar-dark bg-dark  rounded-3">

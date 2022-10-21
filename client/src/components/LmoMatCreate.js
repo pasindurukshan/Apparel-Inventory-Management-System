@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2';
 
-
-
 export default class LmoMatCreate extends Component {
        //Binding event handler method
        constructor(props){
@@ -44,10 +42,7 @@ export default class LmoMatCreate extends Component {
         let qtyError="";
         let categoryError="";
         let descriptionError="";
-       //statements
-        // if(!this.state.lmoID){
-        //   lmoIDError="*LMO ID is Required!"
-        // }
+       
         if(!this.state.matID){
           matIDError="*Material ID is Required!"
         }
@@ -118,11 +113,8 @@ export default class LmoMatCreate extends Component {
                    )
                }
            })
-
-
           }
       }
-
 
       //Demo button
       btnDemo = (e) => {
