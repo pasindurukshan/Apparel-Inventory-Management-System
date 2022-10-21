@@ -215,16 +215,9 @@ export default class AccountCreate extends Component {
                 </nav>
               </div>
             </div>
-
-
-
-           
             <div class="p-3 mb-2 bg-light text-dark rounded-3">
                 <h1 className="h3 mb-3 front-weight-normal">Create new Accounts</h1>
                 <form className="needs-validation" noValidate>
-                   
-                  
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Customer Name</label>
                         <input type = "text"
@@ -237,12 +230,7 @@ export default class AccountCreate extends Component {
                         <div style={{fontSize:12 ,color:"red"}}>
                            {this.state.cusNameError}
                         </div>
-
-
-
-
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Customer Status</label>
                         <input type = "text"
@@ -255,10 +243,7 @@ export default class AccountCreate extends Component {
                         <div style={{fontSize:12 ,color:"red"}}>
                            {this.state.cusStatusError}
                         </div>   
-
-
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Purchase Journal</label>
                         <input type = "Number"
@@ -271,9 +256,7 @@ export default class AccountCreate extends Component {
                         <div style={{fontSize:12 ,color:"red"}}>
                            {this.state.pjournalError}
                         </div>   
-
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Sale Journal</label>
                         <input type = "Number"
@@ -286,11 +269,7 @@ export default class AccountCreate extends Component {
                         <div style={{fontSize:12 ,color:"red"}}>
                            {this.state.sjournalError}
                         </div>   
-
-
-
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>General Journal</label>
                         <input type = "Number"
@@ -303,12 +282,7 @@ export default class AccountCreate extends Component {
                         <div style={{fontSize:12 ,color:"red"}}>
                            {this.state.gjournalError}
                         </div>   
-
-
-
                     </div>
-
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Other</label>
                         <input type = "text"
@@ -317,37 +291,19 @@ export default class AccountCreate extends Component {
                         placeholder="Enter Other DETAILS"
                         value={this.state.other}
                         onChange={this.handleInputChange}/>
-
                         <div style={{fontSize:12 ,color:"red"}}>
                            {this.state.otherError}
                         </div>  
-
-
-
-
                     </div>
-
                     <button className="btn btn-success" type="submit" style={{marginTop:'15px'}} onClick={this.onSubmit}>
                         <i className="far fa-check-square"></i>
                         &nbsp; Save
                     </button>
                     <button type="submit" className="btn btn-dark" style={{ marginTop: '15px', marginBottom:'20px', marginLeft:"900px", width:"140px", backgroundColor:"#2E4661", borderRadius:"10px", padding:"10px 0px 10px 0px"}} onClick={this.btnDemo}>Demo</button>
-
-
                 </form>
                 
             </div>
             </div>
-            
-
-
-            
-     
-
-
-
-
-
             </div>
         )
     }
