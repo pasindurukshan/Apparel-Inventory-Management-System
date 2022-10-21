@@ -141,32 +141,23 @@ export default class TMSDash extends Component {
                   <ul>
                   </ul>
                 </div>
-
                 <div class="position-absolute top-50 end-0 translate-middle-y">
                   <div class="col social">
                     <h1>Help</h1>
-
                     <ul>
 
                       <li><i class="fas fa-envelope"></i>&nbsp; &nbsp; <i class="fas fa-map-marker-alt"></i>&nbsp; &nbsp;<i class="fas fa-star"></i></li>
 
                     </ul>
-
                   </div>
                 </div>
                 <div class="clearfix">
-
-
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-
-
-
     )
   }
 }
