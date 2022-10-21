@@ -14,13 +14,40 @@ const app = express();
 //To reject browser security while two domain working
 const cors = require("cors");
 
-//import order routes
-const orderRoutes = require('./routes/order');
+//import transport routes
+const driverroutes = require("./routes/drivers");
+const vehicleroutes = require("./routes/vehicles");
+
+//import packing routes
+const packingRoutes = require("./routes/packings");
+
+//accounts import rotes
+const accountroutes = require("./routes/accounts");
+const accountplanroutes = require("./routes/accountplans");
+
+//import production routes
+const inventoryRoutes = require("./routes/inventory");
+const factoryRoutes = require("./routes/factory");
+//const orderRoutes = require("./routes/orders");
+
+//import Shipment routes
+const shipmentroutes = require("./routes/shipments");
+const lessmaterialRoutes = require("./routes/lmocard");
 
 //import material routes
 const materialroutes = require("./routes/materials");
 const lmomatroutes = require("./routes/lmomats");
 const matreportroutes = require("./routes/matreports");
+
+
+//import order routes
+const orderRoutes = require('./routes/order');
+
+
+//import qualitycheck routes
+const postRoutes = require('./routes/postsqc');
+
+
 
 //middleware --> Backend routes facilates
 
@@ -28,13 +55,37 @@ const matreportroutes = require("./routes/matreports");
 app.use(bodyparser.json());
 app.use(cors());
 
-//route order middleware
+//transport  routes midleware
+app.use(driverroutes);
+app.use(vehicleroutes);
+
+//accounts routes midleware
+app.use(accountroutes);
+app.use(accountplanroutes);
+
+//production routes midleware
+app.use(inventoryRoutes);
+app.use(factoryRoutes);
 app.use(orderRoutes);
+
+//route middleware
+app.use(packingRoutes);
+
+//routes shipment middleware
+app.use(shipmentroutes);
+app.use(lessmaterialRoutes);
 
 //route material midleware
 app.use(materialroutes);
 app.use(lmomatroutes);
 app.use(matreportroutes);
+
+//route order middleware
+app.use(orderRoutes);
+
+
+//route qualitycheck midleware
+app.use(postRoutes);
 
 
 //server static assests if in production - for Heroku
