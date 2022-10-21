@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from "sweetalert2";
-import {RMsetErrors, setErrors} from "./../conmmon/RMsetErrors"
+import { RMsetErrors, setErrors } from "./../conmmon/RMsetErrors"
 import moment from "moment";
 
 export default class EditPacking extends Component {
@@ -29,6 +29,7 @@ export default class EditPacking extends Component {
   }
 
   handleInputChange = (e) => {
+    debugger;
     const { name, value } = e.target;
 
     this.setState({
@@ -50,9 +51,9 @@ export default class EditPacking extends Component {
     if (!this.state.customer) {
       customerError = "*Cusasdftomer is Required!";
     }
-    if (!this.state.orderId) {
-      orderIdError = "* Order is Required!";
-    }
+    // if (!this.state.orderId) {
+    //   orderIdError = "* Order is Required!";
+    // }
 
     //  else if (!this.state.nic.validate){
     // nicError= '*NIC already exists!'
@@ -116,11 +117,12 @@ export default class EditPacking extends Component {
     return true;
   };
 
-  
+
   onSubmit = (e) => {
+    debugger;
     e.preventDefault();
     const id = this.props.match.params.id;
-     const isValid = this.validate();
+    const isValid = this.validate();
     const {
       customer,
       orderId,
@@ -142,6 +144,7 @@ export default class EditPacking extends Component {
         dueDate,
         address
       )
+
     ) {
       const data = {
         customer: customer,
@@ -154,7 +157,7 @@ export default class EditPacking extends Component {
         address: address,
       };
       console.log(data);
-
+      debugger;
       axios
         .put(`http://localhost:8000/packing/update/${id}`, data)
         .then((res) => {
@@ -298,34 +301,36 @@ export default class EditPacking extends Component {
 
                 <div className="form-group" style={{ marginBottom: "15px" }}>
                   <label style={{ marginBottom: "5px" }}>Category</label>
-                  <input
+                  {/* <input
                     type="text"
                     className="form-control"
                     name="category"
                     placeholder="Enter category"
                     value={this.state.category}
                     onChange={this.handleInputChange}
-                  />
+                  /> */}
+                  <select name="category" class="c-form-profession form-control" id="c-form-profession" value={this.state.category} onChange={this.handleInputChange} >
+                    <option value="">Select a Category</option>
+                    <option value="Shirt">Shirt</option>
+                    <option value="Skirt">Skirt</option>
+                    <option value="Short">Short</option>
+                    <option value="Trouser">Trouser</option>
+                  </select>
                   <div style={{ fontSize: 12, color: "red" }}>
                     {this.state.categoryError}
                   </div>
                 </div>
-
                 <div className="form-group" style={{ marginBottom: "15px" }}>
                   <label style={{ marginBottom: "5px" }}>Payment</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="payment"
-                    placeholder="Enter payment status"
-                    value={this.state.payment}
-                    onChange={this.handleInputChange}
-                  />
+                  <select name="payment" class="c-form-profession form-control" id="c-form-profession" value={this.state.payment} onChange={this.handleInputChange} >
+                    <option value="">Select a Option</option>
+                    <option value="Done">Done</option>
+                    <option value="Fail">Fail</option>
+                  </select>
                   <div style={{ fontSize: 12, color: "red" }}>
                     {this.state.paymentError}
                   </div>
                 </div>
-
                 <div className="form-group" style={{ marginBottom: "15px" }}>
                   <label style={{ marginBottom: "5px" }}>Quantity</label>
                   <input
