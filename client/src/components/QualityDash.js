@@ -111,14 +111,10 @@ class QualityDash extends Component {
                 <ul>
 
                   <li><i class="fas fa-envelope"></i>&nbsp; &nbsp; <i class="fas fa-map-marker-alt"></i>&nbsp; &nbsp;<i class="fas fa-star"></i></li>
-
                 </ul>
-
               </div>
             </div>
             <div class="clearfix">
-
-
             </div>
           </div>
         </div>
