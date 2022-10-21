@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import swal from "sweetalert2";
 
-
-
 export default class CreateFactory extends Component {
-  //Consturctor define
+  //consturctor define
   constructor(props) {
     super(props);
     this.state = {
@@ -57,7 +55,7 @@ export default class CreateFactory extends Component {
     if (!this.state.factelephone) {
       factelephoneError = "* Factory Telephone is Required!";
     } else if (!this.state.factelephone.toString().match(/^[0-9]{10}$/)) {
-      factelephoneError = "*Please Enter valid Telephone Number!";
+      factelephoneError = "*Please enter valid telephone number!";
     }
 
     if (!this.state.facemail) {
