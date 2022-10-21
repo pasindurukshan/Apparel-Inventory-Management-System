@@ -116,7 +116,6 @@ export default class LmoMatCreate extends Component {
           }
       }
 
-
       //Demo button
       btnDemo = (e) => {
         e.preventDefault();
