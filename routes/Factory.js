@@ -2,7 +2,7 @@ const express = require("express");
 //Import Factory user model (Inside models file)
 const Factory = require("../models/factory");
 
-//invoke function in expperss -- express.Router
+//invoke function in express -- express.Router
 const router = express.Router();
 
 
