@@ -76,25 +76,16 @@ export default class AccountEdit extends Component {
         if(this.state.sjournal.match("-")){
           sjournalError="* sale journal amount should not be negative "
          }
-
-
-
-
         if(!this.state.gjournal){
           gjournalError="*general journal  is Required"
          }
          if(this.state.gjournal.match("-")){
           gjournalError="* general journal amount should not be negative "
          }
-
-
-
-
         if(!this.state.other){
           otherError="* other feild is Required"
          } 
-                     
-
+                    
        if(orderIdError||cusNameError||cusStatusError||pjournalError || sjournalError || gjournalError || otherError){
        this.setState({orderIdError,cusNameError,cusStatusError,pjournalError , sjournalError , gjournalError , otherError});
        return false;
@@ -104,9 +95,6 @@ export default class AccountEdit extends Component {
     return true;
 
   }
-
-
-
 
     onSubmit = (e) =>{
         e.preventDefault();
@@ -142,9 +130,6 @@ export default class AccountEdit extends Component {
                     sjournal:"",
                     gjournal:"",
                     other:""
-
-
-
                 }
                 
                 )
@@ -153,7 +138,6 @@ export default class AccountEdit extends Component {
       }
     }
 
-   
    
   //get data from specific id
     componentDidMount(){
@@ -177,11 +161,6 @@ export default class AccountEdit extends Component {
 
         });
     }
-   
-   
-   
-   
-   
    
     render() {
 
@@ -241,8 +220,6 @@ export default class AccountEdit extends Component {
                 </nav>
               </div>
             </div>
-
-
             <div class="p-3 mb-2 bg-light text-dark rounded-3">
 
                 <h1 className="h3 mb-3 front-weight-normal">Update Account Details</h1>
@@ -258,7 +235,6 @@ export default class AccountEdit extends Component {
                         readOnly
                         onChange={this.handleInputChange}/>
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Customer Name</label>
                         <input type = "text"
@@ -269,7 +245,6 @@ export default class AccountEdit extends Component {
                         readOnly
                         onChange={this.handleInputChange}/>
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Customer Status</label>
                         <input type = "text"
@@ -280,7 +255,6 @@ export default class AccountEdit extends Component {
                         readOnly
                         onChange={this.handleInputChange}/>
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Purchase Journal</label>
                         <input type = "Number"
@@ -293,10 +267,7 @@ export default class AccountEdit extends Component {
                           <div style={{fontSize:12 ,color:"red"}}>
                            {this.state.pjournalError}
                         </div>   
-
-
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>Sale Journal</label>
                         <input type = "Number"
@@ -305,14 +276,10 @@ export default class AccountEdit extends Component {
                         placeholder="Enter Sale Journal"
                         value={this.state.sjournal}
                         onChange={this.handleInputChange}/>
-                       
                        <div style={{fontSize:12 ,color:"red"}}>
                            {this.state.sjournalError}
                         </div>   
-
-
                     </div>
-
                     <div className="form-group" style={{marginBottom:'15px'}}>
                         <label style={{marginBottom: '5px'}}>General Journal</label>
                         <input type = "Number"

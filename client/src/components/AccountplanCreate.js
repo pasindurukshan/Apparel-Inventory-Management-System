@@ -73,11 +73,9 @@ export default class AccountplanCreate extends Component {
                         requr:"",
                         time:""
                     }
-                    
                     )
                 }
             })
-
         }
 
 //Demo button
