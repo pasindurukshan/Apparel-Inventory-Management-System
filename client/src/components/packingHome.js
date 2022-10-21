@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import swal from "sweetalert2";
+import "./packingHome.css";
 
 export default class packingHome extends Component {
   constructor(props) {
@@ -38,20 +39,19 @@ export default class packingHome extends Component {
   filterData(packing, searchKey) {
     const result = packing.filter(
       (packing) =>
-        packing.customer.toLowerCase().includes(searchKey) ||
-        packing.orderId.toLowerCase().includes(searchKey) ||
-        packing.category.toLowerCase().includes(searchKey) ||
-        packing.payment.toLowerCase().includes(searchKey) ||
-        packing.orderId.toLowerCase().includes(searchKey) ||
-        packing.quantity.toLowerCase().includes(searchKey) ||
-        packing.weight.toLowerCase().includes(searchKey) ||
-        packing.dueDate.toLowerCase().includes(searchKey) ||
-        packing.address.toLowerCase().includes(searchKey)
+        packing.customer.includes(searchKey) ||
+        packing.category.includes(searchKey) ||
+        packing.payment.includes(searchKey) ||
+        packing.quantity.includes(searchKey) ||
+        packing.weight.includes(searchKey) ||
+        packing.dueDate.includes(searchKey) ||
+        packing.address.includes(searchKey)
     );
     this.setState({ packing: result });
   }
 
   handleSearchArea = (e) => {
+    debugger
     const searchKey = e.currentTarget.value;
 
     axios.get("http://localhost:8000/packing").then((res) => {
@@ -181,7 +181,7 @@ export default class packingHome extends Component {
                 </label>
               </div>
             </div>
-   
+
             <hr />
             <div className="col-lg-3 mt-2 mb-2" style={{ float: "right" }}>
               <input
@@ -286,23 +286,26 @@ export default class packingHome extends Component {
                 /> */}
 
                       <div class="card-body">
-                        <a
+                        {/* <a
                           className="btn btn-primary"
                           href={`/packing/${packing._id}`}
                           style={{ textDecoration: "none" }}
                         >
                           <i class="fas fa-running"></i>&nbsp;View Packing Form
                           Details
-                        </a>
-                        <h5>No.0{index + 1}</h5>
-                        <h6>Customer:{packing.customer} </h6>
-                        <h6>Order ID:{`OID${packing._id.substr(0,5)}`} </h6>
-                        <h6>Category:{packing.category} </h6>
-                        <h6>Payment:{packing.payment} </h6>
-                        <h6>Quantity:{packing.quantity} </h6>
-                        <h6>Weight:{packing.weight}kg </h6>
-                        <h6>DueDate:{packing.dueDate} </h6>
-                        <h6>Address:{packing.address} </h6>
+                        </a> */}
+                        <div className="white-text">
+                          <h5>No.0{index + 1}</h5>
+                          <h6>Customer:{packing.customer} </h6>
+                          <h6>Order ID:{`OID${packing._id.substr(0, 5)}`} </h6>
+                          <h6>Category:{packing.category} </h6>
+                          <h6>Payment:{packing.payment} </h6>
+                          <h6>Quantity:{packing.quantity} </h6>
+                          <h6>Weight:{packing.weight}kg </h6>
+                          <h6>DueDate:{packing.dueDate} </h6>
+                          <h6>Address:{packing.address} </h6>
+                        </div>
+                        <br />
                         <a
                           className="btn btn-warning"
                           href={`/editph/${packing._id}`}
