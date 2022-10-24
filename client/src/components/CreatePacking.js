@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import axios from "axios";
 import swal from "sweetalert2";
 import moment from "moment";
-
+import "./packingHome.css";
 
 export default class CreatePacking extends Component {
   constructor(props) {
     super(props);
     this.state = {
       customer: "",
-     // orderId: "",
+      // orderId: "",
       category: "",
       payment: "",
       quantity: "",
@@ -28,6 +28,7 @@ export default class CreatePacking extends Component {
   }
 
   handleInputChange = (e) => {
+    debugger;
     const { name, value } = e.target;
 
     this.setState({
@@ -38,7 +39,7 @@ export default class CreatePacking extends Component {
 
   validate = () => {
     let customerError = "";
-  //  let orderIdError = "";
+    //  let orderIdError = "";
     let categoryError = "";
     let paymentError = "";
     let quantityError = "";
@@ -91,7 +92,7 @@ export default class CreatePacking extends Component {
 
     if (
       customerError ||
-    //  orderIdError ||
+      //  orderIdError ||
       categoryError ||
       paymentError ||
       quantityError ||
@@ -101,7 +102,7 @@ export default class CreatePacking extends Component {
     ) {
       this.setState({
         customerError,
-      //  orderIdError,
+        //  orderIdError,
         categoryError,
         paymentError,
         quantityError,
@@ -121,7 +122,7 @@ export default class CreatePacking extends Component {
     const isValid = this.validate();
     const {
       customer,
-    //  orderId,
+      //  orderId,
       category,
       payment,
       quantity,
@@ -133,7 +134,7 @@ export default class CreatePacking extends Component {
     if (isValid) {
       const data = {
         customer: customer,
-     //   orderId: orderId,
+        //   orderId: orderId,
         category: category,
         payment: payment,
         quantity: quantity,
@@ -168,7 +169,7 @@ export default class CreatePacking extends Component {
 
     const {
       customer,
-     // orderId,
+      // orderId,
       category,
       payment,
       quantity,
@@ -179,7 +180,7 @@ export default class CreatePacking extends Component {
 
     const data = {
       customer: customer,
-     // orderId: orderId,
+      // orderId: orderId,
       category: category,
       payment: payment,
       quantity: quantity,
@@ -192,7 +193,7 @@ export default class CreatePacking extends Component {
 
     this.setState({
       customer: "Kasun Madushan",
-   //   orderId: "O12",
+      //   orderId: "O12",
       category: "t-shirt",
       payment: "Done",
       quantity: "5000",
@@ -207,8 +208,8 @@ export default class CreatePacking extends Component {
       <div id="wrapper" className="toggled">
         <div id="page-content-wrapper">
           <div className="container-fluid">
-           
-           
+
+
             {/* newbar */}
             <div className="row">
               <div className="col-lg-9 mt-2 mb-2">
@@ -265,12 +266,12 @@ export default class CreatePacking extends Component {
             </div>
 
             <div className="col-md-8 mt-4 mx-auto">
-                <h1 className="h3 mb-3 font-weight-normal">
+              <h1 className="h3 mb-3 font-weight-normal">
                 {" "}
                 Add New Packing Form
-                </h1>
+              </h1>
               <form className="needs-validation" noValidate>
-                
+
                 <div className="form-group" style={{ marginBottom: "15px" }}>
                   <label style={{ marginBottom: "5px" }}>Customer</label>
                   <input
@@ -288,16 +289,16 @@ export default class CreatePacking extends Component {
                 </div>
 
                 <div className="form-group" style={{ marginBottom: "15px" }}>
-                
 
-                  
 
-                 
+
+
+
                 </div>
 
                 <div className="form-group" style={{ marginBottom: "15px" }}>
                   <label style={{ marginBottom: "5px" }}>Category</label>
-                  <input
+                  {/* <input
                     type="text"
                     className="form-control"
                     name="category"
@@ -305,7 +306,14 @@ export default class CreatePacking extends Component {
                     value={this.state.category}
                     onChange={this.handleInputChange}
                     required
-                  />
+                  /> */}
+                  <select name="category" class="c-form-profession form-control" id="c-form-profession" value={this.state.category} onChange={this.handleInputChange} >
+                    <option value="">Select a Category</option>
+                    <option value="Shirt">Shirt</option>
+                    <option value="Skirt">Skirt</option>
+                    <option value="Short">Short</option>
+                    <option value="Trouser">Trouser</option>
+                  </select>
                   <div style={{ fontSize: 12, color: "red" }}>
                     {this.state.categoryError}
                   </div>
@@ -313,7 +321,7 @@ export default class CreatePacking extends Component {
 
                 <div className="form-group" style={{ marginBottom: "15px" }}>
                   <label style={{ marginBottom: "5px" }}>Payment</label>
-                  <input
+                  {/* <input
                     type="text"
                     className="form-control"
                     name="payment"
@@ -321,7 +329,14 @@ export default class CreatePacking extends Component {
                     value={this.state.payment}
                     onChange={this.handleInputChange}
                     required
-                  />
+                  /> */}
+                  <select name="payment" class="c-form-profession form-control" id="c-form-profession" value={this.state.payment} onChange={this.handleInputChange} >
+                    <option value="">Select a Option</option>
+                    <option value="Done">Done</option>
+                    <option value="Fail">Fail</option>
+                  </select>
+
+
                   <div style={{ fontSize: 12, color: "red" }}>
                     {this.state.paymentError}
                   </div>
